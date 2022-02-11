@@ -113,3 +113,11 @@ table.table td i {
     margin-top: 6px;
     font-size: 95%;
 }    
+.textboxq{
+    border:0;
+    width: auto;
+    height: 15px;
+    padding-top: 30px;
+    outline: none;
+
+}
