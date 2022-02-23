@@ -21,4 +21,5 @@ urlpatterns = [
     path('',include('adminsite.urls')),
     path('admin/', admin.site.urls),
     # path('',include('usersite.urls')),
+    path('',include('logreg.urls')),
 ]
