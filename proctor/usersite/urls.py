@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path
 from.import views
 urlpatterns = [
@@ -6,3 +7,10 @@ urlpatterns = [
     path('achievementdetails', views.achievements, name='achievements'),
     path('personalinfo', views.personalinfo, name='personalinfo'),
 ]
+=======
+# from django.urls import path
+# from.import views
+# urlpatterns = [
+#     path('', views.home, name='home'),
+# ]
+>>>>>>> 751423dfd02486c739c437e2f46a3831eba7f8f7

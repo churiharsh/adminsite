@@ -58,7 +58,11 @@ ROOT_URLCONF = 'proctor.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+<<<<<<< HEAD
         'DIRS': [os.path.join(BASE_DIR, 'templates/usersite'),os.path.join(BASE_DIR, 'templates/logreg'),os.path.join(BASE_DIR, 'templates/adminsite')],
+=======
+        'DIRS': [os.path.join(BASE_DIR, 'adminsite/templates')],
+>>>>>>> 751423dfd02486c739c437e2f46a3831eba7f8f7
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,14 +128,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'adminsite/static/'
 STATICFILES_DIRS = [
+<<<<<<< HEAD
    os.path.join(BASE_DIR, "static/adminsite"),
    os.path.join(BASE_DIR, "static/usersite"),
    os.path.join(BASE_DIR, "static/login"),
+=======
+   os.path.join(BASE_DIR, "adminsite/static/"),
+>>>>>>> 751423dfd02486c739c437e2f46a3831eba7f8f7
 ]
 
-STATIC_ROOT =os.path.join(BASE_DIR, "static_root")
+STATIC_ROOT =os.path.join(BASE_DIR, "adminsite/static_root/")
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 

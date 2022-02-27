@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -14,3 +15,8 @@ def achievements(request):
 
 def personalinfo(request):
     return render(request,'personalinfo.html')
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 751423dfd02486c739c437e2f46a3831eba7f8f7
