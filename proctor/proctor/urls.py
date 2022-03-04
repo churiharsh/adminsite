@@ -18,15 +18,9 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns = [
-<<<<<<< HEAD
-    path('adminsite/',include('adminsite.urls')),
-    path('usersite/',include('usersite.urls')),
+     path('',include('adminsite.urls')),
+    
+      path('usersite',include('usersite.urls')),
     path('login/',include('logreg.urls')),
-    # path('admin/', admin.site.urls),
-=======
-    path('',include('adminsite.urls')),
-    path('admin/', admin.site.urls),
-    # path('',include('usersite.urls')),
-    path('',include('logreg.urls')),
->>>>>>> 751423dfd02486c739c437e2f46a3831eba7f8f7
+     path('admin/', admin.site.urls),
 ]

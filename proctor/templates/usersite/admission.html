@@ -18,11 +18,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="admission.css">
+    <link rel="stylesheet" href="static/css/usersite/admission.css">
     
 </head>
 <body >
-<form action="./admissionConnect.jsp">
+{% comment %} <form action="./admissionConnect.jsp"> {% endcomment %}
 <div class="container">
 
         <h4 style="padding-top: 20px; text-align: center; text-transform: uppercase;">Department of</h4>
@@ -148,7 +148,7 @@
 
     <div class="container" id="bottombtns">
        <!--  <a href="personalinfo.jsp"> -->
-    <a href="personalinfo.html">
+    <a href="{%url 'personalinfo'%}">
             <input class="btn btn-primary submit-btn" id="next"type="submit" value="Next" style="float: right;"  min="0" max="500000000000">  
         </a>
         <a href="">
@@ -164,7 +164,7 @@
     <!-- <script src="scrpit2.js"></script> -->
     
   </form>
-  <script src="./keychecker.js"></script>
+  <script src="static/js/usersite/keychecker.js"></script>
   <script src="./localstorage.js"></script>
   <script src="scrpit2.js"></script>
 </body>

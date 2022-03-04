@@ -11,11 +11,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="academicRecord.css">
+    <link rel="stylesheet" href="static/css/usersite/academicRecord.css">
 
 </head>
 <body>
-<form action="./academicConnect.jsp" method="post">
+{% comment %} <form action="./academicConnect.jsp" method="post"> {% endcomment %}
       <div class="container">
 
           <h2 style="padding-top: 20px;"><u>ACADEMIC RECORD</u></h2>
@@ -281,14 +281,14 @@
  
      <div class="container" id="bottombtns">
         <br> <br>
-        <a href="personalinfo.html">
+        <a href="{%url 'achievements'%}">
             <input class="btn btn-primary submit-btn" type="submit" value="Next" style="float: right; padding-left:5px 50px; width:136px;height:36px"  min="0" max="500000000000">  
         </a>
         <a href="">
             <input class="btn btn-primary submit-btn" type="submit" value="Save" style="float: right; padding:5px 50px;margin-right:30px" id="save" >  
         </a> 
         </a>
-         <a href="personalinfo.jsp">
+         <a href="{%url 'personalinfo'%}">
           <input class="btn btn-primary submit-btn" type="button" value="Back" style="width:127px" >  
       </a>  
        
