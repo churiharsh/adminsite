@@ -34,6 +34,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # logreg app
+    'logreg.apps.LogregConfig',
+
+    # crispy forms
+    'crispy_forms',
    'adminsite.apps.AdminsiteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -135,3 +140,5 @@ STATIC_ROOT =os.path.join(BASE_DIR, "static_root")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
