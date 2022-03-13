@@ -13,6 +13,7 @@
 </head>
 <body>
  <form  method="POST"> 
+   {% csrf_token %}
     <div class="form_wrapper">
         <div class="form_container">
           <div class="title_container">
@@ -26,43 +27,53 @@
                 <div class="row clearfix">
                   <div class="col_half">
                     <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                      <input type="text"  placeholder="First Name" name="name" />
+                      <input type="text"  placeholder="First Name" name="firstname" />
                     </div>
                     
                   </div>
                   
                   <div class="col_half">
                     <div class="input_field"> <span><i aria-hidden="true" class="fa fa-user"></i></span>
-                      <input type="text"  placeholder="Last Name" name="surname" required />
+                      <input type="text"  placeholder="Last Name" name="lastname" required />
                     </div>
                   </div>
                 </div>
 
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
-                  <input type="text"name="email" placeholder="Email"  required />
+                  <input type="email"name="email" placeholder="Email"  required />
+                </div>
+                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-envelope"></i></span>
+                  <input type="text"name="username" placeholder="Username"  required />
                 </div>
                 <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
-                  <input type="password" name="password" placeholder="Password" id="pass1"required />
+                  <input type="password" name="password1" placeholder="Password" id="pass1"required />
                 </div>
                <div class="input_field"> <span><i aria-hidden="true" class="fa fa-lock"></i></span>
                   <input type="password" name="password2" placeholder="Re-type Password" id="pass2" required />
                 </div> 
                 <br>
-                    <a href="login.jsp">
+                  
                     <input class="button" type="submit" value="Register" />
-                    </a> 
+                   
                 
               </form>
 
               <div >
-                <p class="credit">Already have an account ? <a href="login.jsp">Login</a></p>
+                <p class="credit">Already have an account ? <a href="{%url 'login'%}">Login</a></p>
               </div>
             </div>
           </div>
         </div>
       </div>
+      {% comment %} ERROR MESSAGE DISPLAY {% endcomment %}
+      <div>
+        {%for message in messages%}
+       <p class="error-display">{{message}}</p>
+        {%endfor%}
+      
+      </div>
       <!-- <p class="credit">Already have an account ? <a href="http://www.login1.html" class="text-danger">Login</a></p> -->
    <!--    </form> -->
-      <script src="./regvalid.js"></script>
+      {% comment %} <script src="./regvalid.js"></script> {% endcomment %}
 </body>
 </html>

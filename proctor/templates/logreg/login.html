@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 </head>
 <body>
-    <form  method="post">
+    <form action="login" method="POST">
+        {% csrf_token %}
     <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
         <div class="card card0 border-0">
             <div class="row d-flex">
@@ -37,8 +38,8 @@
                         </div>
                          <p class="h3 adminhead" style="margin-left:250px;">Student Login</p> 
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-sm">Email Address</h6>
-                            </label> <input class="mb-4" type="text" name="email" placeholder="Enter email address" required> </div>
+                                <h6 class="mb-0 text-sm">Username</h6>
+                            </label> <input class="mb-4" type="text" name="username" placeholder="Enter your Username" required> </div>
                         <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-sm">Password</h6>
                             </label> <input type="password" name="password" placeholder="Enter password" required> </div>

@@ -158,7 +158,10 @@ h2{
 .form_container .row .col_half.last {
     border-left: 1px solid #ccc;
 }
-
+.error-display{
+    color: red;
+    font-size: 12px;
+}
 
 
 .credit {
