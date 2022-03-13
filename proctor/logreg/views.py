@@ -1,6 +1,6 @@
 from email import message
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import User,auth
+from django.contrib.auth.models import User,auth,AuthUser
 from django.contrib import messages
 
 # Create your views here.
@@ -10,8 +10,13 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from logreg.forms import NewUserForm
-
+# from models import AuthUser
 # Create your views here.
+
+
+
+
+
 def login(request):
     if request.method == 'POST':
         username=request.POST['username']
@@ -19,11 +24,13 @@ def login(request):
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect('usersite/academic')
+            thisUser = AuthUser.objects.get(authuser=request.user)
+            return redirect('admission')
         else:
             messages.info(request,'Invalid Credentials')
-            return redirect('login')
-    return render(request,'login.html')
+            return redirect('/')
+    else:        
+     return render(request,'login.html')
     
 def registration(request):
     if request.method == 'POST':
