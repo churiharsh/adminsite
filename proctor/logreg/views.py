@@ -1,6 +1,6 @@
 from email import message
 from django.shortcuts import redirect, render
-from django.contrib.auth.models import User,auth,AuthUser
+from django.contrib.auth.models import User,auth
 from django.contrib import messages
 
 # Create your views here.
@@ -10,9 +10,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from logreg.forms import NewUserForm
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.shortcuts import redirect
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import TemplateView
+
 # from models import AuthUser
 # Create your views here.
-
 
 
 
@@ -23,9 +30,8 @@ def login(request):
         password=request.POST['password']
         user=auth.authenticate(username=username,password=password)
         if user is not None:
-            auth.login(request,user)
-            thisUser = AuthUser.objects.get(authuser=request.user)
-            return redirect('admission')
+                auth.login(request,user)
+                return redirect('admission')
         else:
             messages.info(request,'Invalid Credentials')
             return redirect('/')
@@ -61,7 +67,10 @@ def registration(request):
     else:
         return render(request,'registration.html')        
 
-   
+@login_required
+def logout_view(request):
+    logout(request)
+    return render(request,'logout.html')   
        
     #   form=NewUserForm(request.POST)
     # if form.is_valid():
