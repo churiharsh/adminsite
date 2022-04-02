@@ -1,4 +1,6 @@
 from email import message
+from types import MemberDescriptorType
+# from urllib import request
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
@@ -22,7 +24,7 @@ from django.views.generic import TemplateView
 # Create your views here.
 
 
-
+# logdetails=request.session['username']
 
 def login(request):
     if request.method == 'POST':
@@ -37,6 +39,15 @@ def login(request):
             return redirect('/')
     else:        
      return render(request,'login.html')
+
+
+# def login(request):
+#     m = MemberDescriptorType.objects.get(username=request.POST['username'])
+#     if m.check_password(request.POST['password']):
+#         request.session['member_id'] = m.id
+#         return HttpResponse("You're logged in.")
+#     else:
+#         return HttpResponse("Your username and password didn't match.")     
     
 def registration(request):
     if request.method == 'POST':
