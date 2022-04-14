@@ -30,7 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+# hello chai pee loo
 # Application definition
 
 INSTALLED_APPS = [
