@@ -326,7 +326,17 @@ class Sem2(models.Model):
         managed = False
         db_table = 'sem2'
 
+class admissiondetails(models.Model):
+    year = models.CharField(max_length=45, blank=True, null=True)
+    category = models.CharField(max_length=45, blank=True, null=True)
+    HSC = models.CharField(max_length=45, blank=True, null=True)
+    CET = models.CharField(max_length=45, blank=True, null=True)
+    JEE = models.CharField(max_length=45, blank=True, null=True)
+    diploma = models.CharField(max_length=45, blank=True, null=True)
 
+    class Meta:
+        managed = False
+        db_table = 'admission'
 class Sem3(models.Model):
     sub1 = models.CharField(max_length=45, blank=True, null=True)
     sub2 = models.CharField(max_length=45, blank=True, null=True)

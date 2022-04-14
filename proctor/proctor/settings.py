@@ -144,6 +144,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-AUTO_LOGOUT = {'IDLE_TIME': 200}
+AUTO_LOGOUT = {'IDLE_TIME':500}
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'

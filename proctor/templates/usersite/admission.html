@@ -67,7 +67,8 @@
     
  -->
     <br> <br>
-
+    {% comment %} <form action="Admission" method="POST"> {% endcomment %}
+        {% csrf_token %}
     <div class="container">
      <h5>Name of the Proctor : <input type="text">  </h5>
 
@@ -153,6 +154,7 @@
         </a>
         <a href="">
             <input class="btn btn-primary submit-btn" type="submit" value="Save" style="float:right; " id="save" >  
+            {% comment %} <button onclick="window.print()">Print this page</button> {% endcomment %}
         </a> 
     </div>
      
@@ -165,8 +167,8 @@
     
   </form>
   <script src="static/js/usersite/keychecker.js"></script>
-  <script src="./localstorage.js"></script>
-  <script src="scrpit2.js"></script>
+  <script src="static/js/usersite/localstorage.js"></script>
+  {% comment %} <script src="scrpit2.js"></script> {% endcomment %}
 </body>
 </html>
 

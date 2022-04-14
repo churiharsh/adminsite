@@ -1,3 +1,4 @@
+from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -8,14 +9,31 @@ from django.conf import settings
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
+from django.http import Http404
+
+
+from adminsite.models import Admission
 
 # Create your views here.
-@login_required(login_url='logreg/login')
+@login_required
 def admission(request):
   if not request.user.is_authenticated:
     return redirect('unauthorised')
-  else:  
+  else:
     return render(request,'admission.html')
+        # if request.method=='POST':
+        #     form = StatementForm(request.POST) 
+        #     if form.is_valid():
+        #               year=request.POST.get('year')
+        #               category=request.POST.get('category')
+        #               hsc=request.POST.get('hsc')
+        #               cet=request.POST.get('cet')
+        #               jee=request.POST.get('jee')
+        #               diploma=request.POST.get('diploma')
+        #               admission=Admission(year=year,category=category,hsc=hsc,cet=cet,jee=jee,diploma=diploma)
+        #               admission.save()
+
+
 
 @login_required
 def academic(request):
